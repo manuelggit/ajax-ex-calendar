@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  width: 50%;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+#gennaio {
+  width: 95%;
+  height: 95vh;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+#gennaio div {
+  border: 1px solid black;
+  width: 95%;
+  height: auto;
+  background: yellow;
+}

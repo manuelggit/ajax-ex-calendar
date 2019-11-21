@@ -7,8 +7,10 @@ $(document).ready(function() {
   console.log('Gennaio ha ' + giorniGen2018 + ' giorni');
 
   for (var i = 1; i <= giorniGen2018; i++) {
-    var date = moment('2018-01' + '-' + i, 'YYYY-MM-DD').format('DD-MM-YYYY');
-    console.log(date);
+
+    var giorno = moment().date(i).month(0).format('DD MMMM')
+    console.log(giorno);
+
   }
 
 
