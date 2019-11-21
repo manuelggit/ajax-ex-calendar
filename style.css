@@ -32,10 +32,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .tasti div {
   width: 40%;
   height: auto;
 }
+
+/* .active {
+  display: block!important;
+}
+
+.calendario {
+  display: none;
+} */
