@@ -10,8 +10,17 @@ $(document).ready(function() {
 
     var giorno = moment().date(i).month(0).format('DD MMMM')
     console.log(giorno);
-
+    $('#gennaio').append("<div>" + giorno + "</div>")
   }
+
+  $.ajax ({
+    url:"https://flynn.boolean.careers/exercises/api/holidays?year=2018&month=0",
+    method:'GET',
+    success: function (festeapi) {
+      var festa = festeapi.response;
+      console.log(festa);
+    }
+  })
 
 
 });
