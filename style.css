@@ -17,4 +17,9 @@
 
 #gennaio div {
   width: 95%;
+  margin-left: 10px;
+}
+
+.festa {
+  color: red;
 }
