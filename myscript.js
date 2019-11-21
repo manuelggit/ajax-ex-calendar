@@ -1,36 +1,41 @@
 $(document).ready(function() {
 
-  // var dataOggi = moment().format('DD MMMM');
-  // console.log('oggi è il:', dataOggi);
-
-
-
   $.ajax ({
     url:"https://flynn.boolean.careers/exercises/api/holidays?year=2018&month=0",
     method:'GET',
     success: function (festeapi) {
-      var festivita = festeapi.response;
+      var festivita = festeapi.response; // mi ricavo le festivita dall'api
       console.log(festivita); // è un array di festivita
 
-      var giorniGen2018 = moment("2018-01").daysInMonth();
-      // console.log('Gennaio ha ' + giorniGen2018 + ' giorni');
+      var giorniGen2018 = moment("2018-01").daysInMonth(); // quanti giorni ci sono a gennaio 2018?
 
-      for (var j = 0; j < festivita.length; j++) { // attraverso l'array di festivita
-        var festaNome = festivita[j].name
-        console.log(festaNome);
-        var festaData = festivita[j].date
-        console.log(festaData);
-      }
-
-      for (var i = 1; i <= giorniGen2018; i++) {
+      for (var i = 1; i <= giorniGen2018; i++) { //ciclo il mese di gennaio
 
         var giorno = moment().date(i).month(0).format('DD MMMM')
         var dataGiorno = moment('2018-01-'+i, 'YYYY-MM-D').format('YYYY-MM-DD'); // lo formatto com'è nell'api
-        console.log(giorno, dataGiorno);
-        $('#gennaio').append("<div data-giorno='"+dataGiorno+"'>" + giorno + "</div>");
-
+        console.log(giorno, dataGiorno); // mi stampo il giorno sia in lettere che in cifre
+        $('#gennaio').append("<div data-giorno='"+dataGiorno+"'>" + giorno + "</div>"); // stampo in pagina il calendario con gli attribuiti corrispondenti (cioè dataGiorno)
 
       }
+
+      for (var j = 0; j < festivita.length; j++) { // attraverso l'array di festivita
+        var festaNome = festivita[j].name // mi ricavo il nome delle festivita
+        var festaData = festivita[j].date // mi ricavo le date delle festivita
+        console.log('è festa: ' + festaNome, festaData); // stampo in console nomi e date delle feste
+
+        var festaSelezionata = $('div[data-giorno="'+ festaData +'"]');
+        festaSelezionata.addClass('festa'); //aggiungo la classe festa ai div con attributo festaData
+
+        if(festaSelezionata){
+          festaSelezionata.append(" - " + festaNome); //aggiungo il nome della festa accanto alla festa
+        }
+
+      }
+
+
+
+
+
 
 
 

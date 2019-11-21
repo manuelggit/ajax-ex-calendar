@@ -23,3 +23,19 @@
 .festa {
   color: red;
 }
+
+#titolo div, .tasti div {
+  border: 1px solid black;
+}
+
+.tasti {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.tasti div {
+  width: 40%;
+  height: auto;
+}
