@@ -27,7 +27,7 @@ $(document).ready(function() {
         var giorno = moment().date(i).month(0).format('DD MMMM')
         var dataGiorno = moment('2018-01-'+i, 'YYYY-MM-D').format('YYYY-MM-DD'); // lo formatto com'è nell'api
         console.log(giorno, dataGiorno);
-        $('#gennaio').append("<div>" + giorno + "</div>");
+        $('#gennaio').append("<div data-giorno='"+dataGiorno+"'>" + giorno + "</div>");
 
 
       }
